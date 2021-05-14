@@ -1,5 +1,5 @@
 ## 目录说明
-> 所有项目均为多模块聚合项目，方便后期添加具有相同功能的其他组件 demo，推荐按照顺序学习
+> 所有项目均为多模块聚合项目，方便后期添加具有相同功能的其他组件实现，推荐按照顺序学习
 
 * [/microservice-discovery，*注册中心*](https://github.com/goindow/microservice-components-learning/tree/main/microservice-discovery)
   * /microservice-discovery-nacos
