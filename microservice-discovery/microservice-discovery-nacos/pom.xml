@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- groupId、version 继承自父 POM -->
+  <!--<groupId>indi.goindow.demo</groupId>
+  <version>${revision}</version>-->
+  <artifactId>microservice-discovery-nacos</artifactId>
+  <name>microservice-discovery-nacos</name>
+  <packaging>jar</packaging>
+
+  <!-- 父 POM -->
+  <parent>
+    <groupId>indi.goindow.demo</groupId>
+    <artifactId>microservice-discovery</artifactId>
+    <version>${revision}</version>
+  </parent>
+
+  <!-- 子模块自己的依赖，默认自动引入父 POM 中 <dependencies/> 定义的依赖 -->
+  <dependencies>
+    <!-- nacos discovery -->
+    <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+    </dependency>
+    <!-- springboot web -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <!-- springboot test -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <!-- 插件等相关配置，也会继承子父 POM -->
+  <!--<build><plugins></plugins></build>-->
+
+</project>

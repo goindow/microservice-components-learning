@@ -1,0 +1,28 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: microservice-gateway-springcloud-gateway
+  cloud:
+    # nacos-discovery
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    # springcloud-gateway
+    gateway:
+      # 动态路由，整合注册中心（nacos），有新的服务注册到注册中心，自动添加该路由
+      discovery:
+        locator:
+          # 开启从注册中心动态创建路由的功能，自动为每一个服务创建 router，这个 router 将以服务名开头的请求路径转发到对应的服务，有新的服务注册到注册中心，自动添加该路由
+          enabled: true
+          # 将请求路径上的服务名配置为小写（因为服务注册的时候，向注册中心注册时将服务名转成大写的了）
+          lower-case-service-id: true
+      # 静态路由
+      routes:
+        - id: microservice-discovery-nacos
+          uri: lb://microservice-gateway-user-service
+          predicates:
+            - Path=/user/**
+logging:
+  level:
+    org.springframework.cloud.gateway: debug

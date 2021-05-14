@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  nacos:
+    image: "nacos/nacos-server:2.0.0"
+    ports:
+      - "8848:8848"    # port HTTP client -> server
+#      - "9848:9848"    # port+1000 gRPC client -> server
+    volumes:
+      - ./conf/custom.properties:/home/nacos/init.d/custom.properties    # 自定义配置
+      - ./data:/home/nacos/data    # 持久化（使用内嵌分布式数据库）
+      - ./logs:/home/nacos/logs
+#      - /etc/localtime:/etc/localtime
+#    restart: always
+    environment:
+      # 更多环境变量参考，https://hub.fastgit.org/nacos-group/nacos-docker/blob/master/README_ZH.md         
+      - MODE=standalone
+      - EMBEDDED_STORAGE=embedded       # 使用内嵌分布式数据库持久化

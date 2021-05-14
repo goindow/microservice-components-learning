@@ -1,0 +1,10 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: microservice-config-nacos
+# nacos-config 根据 spring.profiles.active 环境变量读取不同环境变量下的配置
+# 默认 active 读取 microservice-config-nacos.yaml 配置
+# 设置 active=dev 读取 microservice-config-nacos-dev.yaml 配置
+  profiles:
+    active: dev

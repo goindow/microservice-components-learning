@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>indi.goindow.demo</groupId>
+  <artifactId>microservice-gateway</artifactId>
+  <version>${revision}</version>
+  <name>microservice-gateway</name>
+  <packaging>pom</packaging>
+
+  <!-- 父 POM -->
+  <!-- spring-boot-starter-parent 相关包版本管理 -->
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>${springboot.version}</version>
+  </parent>
+
+  <!-- 子模块列表 -->
+  <modules>
+    <module>microservice-gateway-springcloud-gateway</module>
+      <module>microservice-gateway-user-service</module>
+  </modules>
+
+  <!-- 属性 -->
+  <properties>
+    <revision>1.0-SNAPSHOT</revision>
+    <springboot.version>2.3.2.RELEASE</springboot.version>
+    <springcloud.version>2.2.5.RELEASE</springcloud.version>    <!-- 2.2.5 springcloud => 2.3.2 springboot -->
+    <nacos.version>2.2.5.RELEASE</nacos.version>    <!-- 2.2.5 nacos => 2.3.2 springboot -->
+  </properties>
+
+  <!-- 依赖继承，子模块均自动引入 -->
+  <dependencies>
+    <!-- nacos discovery -->
+    <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+    </dependency>
+  </dependencies>
+
+  <!-- 依赖版本管理，子模块不直接引入，如果引入则默认使用此处定义的版本 -->
+  <dependencyManagement>
+    <dependencies>
+      <!-- springcloud gateway -->
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-gateway</artifactId>
+        <version>${springcloud.version}</version>
+      </dependency>
+      <!-- nacos discovery -->
+      <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        <version>${nacos.version}</version>
+      </dependency>
+      <!-- nacos config -->
+      <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        <version>${nacos.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <!-- 插件等相关配置，也会继承子父 POM -->
+  <!--<build><plugins></plugins></build>-->
+
+</project>

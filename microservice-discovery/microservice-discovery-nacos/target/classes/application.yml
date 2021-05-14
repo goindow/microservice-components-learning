@@ -1,0 +1,10 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: microservice-discovery-nacos
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848    # standalone
+#        server-addr: localhost:8848,localhost:8849,localhost:8850    # cluster
