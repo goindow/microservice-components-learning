@@ -12,7 +12,5 @@
     * springcloud-gateway 实现，整合 nacos discovery 实现默认的动态路由、静态路由
   * /microservice-gateway-springcloud-gateway2
     * springcloud-gateway 实现，整合 nacos discovery/config 实现可配置的动态路由
-  * /microservice-gateway-user-service
-    * user 测试服务
 * /COMPONENTS，依赖组件
   * /nacos，注册中心、配置中心
