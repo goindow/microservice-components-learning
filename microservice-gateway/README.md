@@ -17,5 +17,5 @@
 * 【**CASE 1**】运行 ../COMPONENTS/nacos & /microservice-gateway-user-service 及 ./microservice-gateway-springcloud-gateway 服务
   * 点击 [localhost:8081/user/info](http://localhost:8081/user/info)，查看服务是否启动成功 
   * 点击 [http://localhost:8848/nacos/#/serviceManagement](http://localhost:8848/nacos/#/serviceManagement) 进入 nacos 管理后台，查看服务列表是否包含如下服务 *microservice-gateway-user-service*、*microservice-gateway-springcloud-gateway*
-  * 点击 [localhost:8080/user/info](http://localhost:8081/user/info)，查看网关是否路由成功
+  * 点击 [localhost:8080/user/info](http://localhost:8080/user/info)(静态路由) 或 [localhost:8080/microservice-gateway-user-service/user/info](http://localhost:8080/microservice-gateway-user-service/user/info)(配合注册中心，将服务自动注册到路由)，查看网关是否路由成功
 > 如果需要测试 gateway 的负载均衡功能，将 microservice-gateway-user-service 编译打包后，使用不同端口运行多个服务
