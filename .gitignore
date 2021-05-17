@@ -2,4 +2,9 @@
 .vscode
 .DS_Store
 
+/COMPONENTS/nacos/data/*
+/COMPONENTS/nacos/logs/*
+!/COMPONENTS/nacos/data/.gitkeep
+!/COMPONENTS/nacos/logs/.gitkeep
+
 **/target/
