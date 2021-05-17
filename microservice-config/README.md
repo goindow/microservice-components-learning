@@ -11,7 +11,7 @@
 
 ### 用例
 * 【**CASE 1**】运行 ../COMPONENTS/nacos & ./microservice-config-nacos 服务
-  * 点击 [localhost:8848/nacos/#/configurationManagement](http://localhost:8848/nacos/#/configurationManagement) 进入 nacos 管理后台，添加如下配置
+  * 点击 [localhost:8848/nacos/#/configurationManagement](http://localhost:8848/nacos/#/configurationManagement) 进入 nacos 管理后台，添加如下配置（如果使用本仓库 nacos，则跳过此步）
     * microservice-config-nacos.yaml 
       ```yaml
       config:
