@@ -11,7 +11,16 @@
 
 ### 用例
 * 【**CASE 1**】运行 ../COMPONENTS/nacos & ./microservice-config-nacos 服务
+  * 点击 [hlocalhost:8848/nacos/#/configurationManagement](localhost:8848/nacos/#/configurationManagement) 进入 nacos 管理后台，添加如下配置
+    * microservice-config-nacos.yaml 
+    ```yaml
+    config:
+      info: "user service from nacos-config@[microservice-config-nacos.yaml]"
+    ```
+    * microservice-config-nacos-dev.yaml
+    ```yaml
+    config:
+      info: "user service from nacos-config@[microservice-config-nacos-dev.yaml]"
+    ```
   * 点击 [localhost:8080/user/info](http://localhost:8080/user/info)，查看服务是否启动成功 
-  * 点击 [http://localhost:8848/nacos/#/serviceManagement](http://localhost:8848/nacos/#/serviceManagement) 进入 nacos 管理后台，查看服务列表是否包含名为 *microservice-config-nacos* 的服务
-  * 
 
