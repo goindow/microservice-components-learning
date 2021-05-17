@@ -22,5 +22,5 @@
     config:
       info: "user service from nacos-config@[microservice-config-nacos-dev.yaml]"
     ```
-  * 点击 [localhost:8080/user/info](http://localhost:8080/user/info)，查看服务是否启动成功 
+  * 点击 [localhost:8080/user/info](http://localhost:8080/user/info)，查看返回值是否是 *user service from nacos-config@[microservice-config-nacos.yaml]*
 
