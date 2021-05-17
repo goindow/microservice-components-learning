@@ -20,4 +20,4 @@
   * 点击，如下地址，查看网关是否路由成功
     * [localhost:8080/user/info](http://localhost:8080/user/info)，**静态路由**
     * [localhost:8080/microservice-gateway-user-service/user/info](http://localhost:8080/microservice-gateway-user-service/user/info)，**配合注册中心，将服务自动注册到路由**
-> 如果需要测试 gateway 的负载均衡功能，将 microservice-gateway-user-service 编译打包后，使用不同端口运行多个服务，*java -jar user-service.jar --server.port=[8082|8083]*
+> 如果需要测试 gateway 的负载均衡功能，将 microservice-gateway-user-service 编译打包后，使用不同端口运行多个服务，`java -jar user-service.jar --server.port=[8082|8083]`
