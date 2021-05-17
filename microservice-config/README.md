@@ -24,17 +24,15 @@
     ```
   * 点击 [localhost:8080/user/info](http://localhost:8080/user/info)，查看返回值是否是 *"user service from nacos-config@[microservice-config-nacos.yaml]"*
   * 修改 spring.profiles.active=dev，查看配置是自动更新到 dev 环境值
-  ```yaml
-  server:
-    port: 8080
-  spring:
-    application:
-      name: microservice-config-nacos
-  # nacos-config 根据 spring.profiles.active 环境变量读取不同环境变量下的配置
-  # 默认 active 读取 microservice-config-nacos.yaml 配置
-  # 设置 active=dev 读取 microservice-config-nacos-dev.yaml 配置
-    profiles:
-      active: dev
-  ```
+    * application.yml
+    ```yaml
+    server:
+      port: 8080
+    spring:
+      application:
+        name: microservice-config-nacos
+      profiles:
+        active: dev
+    ```
   * 点击 [localhost:8080/user/info](http://localhost:8080/user/info)，查看返回值是否是 *"user service from nacos-config@[microservice-config-nacos-dev.yaml]"*
 
