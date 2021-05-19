@@ -22,4 +22,6 @@ management:
   endpoints:
     web:
       exposure:
-        exclude: "*"
+        include: '*'
+  security:
+    enabled: false
