@@ -9,8 +9,8 @@
     * nacos 实现，动态获取外部配置
 * [/microservice-gateway，*网关*](https://github.com/goindow/microservice-components-learning/tree/main/microservice-gateway)
   * /microservice-gateway-springcloud-gateway
-    * springcloud-gateway 实现，整合 nacos discovery 实现默认的动态路由、静态路由
+    * springcloud-gateway 实现，整合 nacos discovery 实现默认的动态路由（将服务自动注册到路由）、静态路由
   * /microservice-gateway-springcloud-gateway2
-    * springcloud-gateway 实现，整合 nacos discovery/config 实现可配置的动态路由
+    * springcloud-gateway 实现，整合 nacos discovery & config 实现可配置的动态路由
 * /COMPONENTS，依赖组件
   * /nacos，注册中心、配置中心
