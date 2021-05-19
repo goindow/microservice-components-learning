@@ -6,11 +6,11 @@
 
 ### 模块说明
 * /microservice-gateway-springcloud-gateway
-  * springcloud-gateway 实现，整合 nacos discovery 实现默认的动态路由（将服务自动注册到路由）、静态路由，使用 8080 端口
+  * springcloud-gateway 实现，整合 nacos discovery 实现默认的动态路由（将服务自动注册到路由）、静态路由，`使用 8080 端口`
 * /microservice-gateway-springcloud-gateway2
-  * springcloud-gateway 实现，整合 nacos discovery & config 实现可配置的动态路由，使用 8080 端口
+  * springcloud-gateway 实现，整合 nacos discovery & config 实现可配置的动态路由，`使用 8080 端口`
 * /microservice-gateway-user-service
-  * user 测试服务，使用 8081 端口
+  * user 测试服务，`使用 8081 端口`
 * *todo: 其他实现...*
 
 ### 用例
