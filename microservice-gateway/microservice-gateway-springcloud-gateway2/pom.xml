@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- groupId、version 继承自父 POM -->
+  <!--<groupId>indi.goindow.demo</groupId>
+  <version>${revision}</version>-->
+  <artifactId>microservice-gateway-springcloud-gateway2</artifactId>
+  <name>microservice-gateway-springcloud-gateway2</name>
+
+  <parent>
+    <groupId>indi.goindow.demo</groupId>
+    <artifactId>microservice-gateway</artifactId>
+    <version>${revision}</version>
+  </parent>
+
+  <dependencies>
+    <!-- 继承自父 POM  -->
+    <!-- nacos discovery -->
+    <!--<dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+    </dependency>-->
+    <!-- fastjson -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+    </dependency>
+    <!-- springcloud gateway -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-gateway</artifactId>
+    </dependency>
+    <!-- nacos config -->
+    <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+    </dependency>
+    <!-- springboot actuator -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+  </dependencies>
+
+</project>
