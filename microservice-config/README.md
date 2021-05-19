@@ -11,7 +11,7 @@
 
 ### 用例
 * 【**CASE 1**】从外部配置中心获取数据
-  * 运行 ../COMPONENTS/nacos & ./microservice-config-nacos 服务
+  * 运行 ../COMPONENTS/nacos
   * 点击 [localhost:8848/nacos/#/configurationManagement](http://localhost:8848/nacos/#/configurationManagement) 进入 nacos 管理后台，添加如下配置
     * microservice-config-nacos.yaml 
       ```yaml
@@ -23,6 +23,7 @@
       config:
         info: "user service from nacos-config@[microservice-config-nacos-dev.yaml]"
       ```
+  * 运行 ./microservice-config-nacos 服务
   * 点击 [localhost:8080/user/info](http://localhost:8080/user/info)，查看返回值是否是 *"user service from nacos-config@[microservice-config-nacos.yaml]"*
   * 修改 spring.profiles.active=dev，重启 ./microservice-config-nacos 服务，查看配置是否自动更新到 dev 环境值
     * application.yml
