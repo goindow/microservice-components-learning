@@ -15,7 +15,7 @@
 
 ### 用例
 * 【**CASE 1**】整合 discovery 实现默认的动态路由（将服务自动注册到路由）、静态路由
-  * 运行 ../COMPONENTS/nacos & /microservice-gateway-user-service 及 ./microservice-gateway-springcloud-gateway 服务
+  * 运行 ../COMPONENTS/nacos & ./microservice-gateway-user-service 及 ./microservice-gateway-springcloud-gateway 服务
   * 点击 [localhost:8081/user/info](http://localhost:8081/user/info)，查看 user 服务是否启动成功 
   * 点击 [localhost:8848/nacos/#/serviceManagement](http://localhost:8848/nacos/#/serviceManagement) 进入 nacos 管理后台，查看服务列表是否包含如下服务 *microservice-gateway-user-service*、*microservice-gateway-springcloud-gateway*
   * 点击，如下地址，查看网关是否路由成功
@@ -33,7 +33,7 @@
             "routeList":[]
         }
         ```
-  * 运行 /microservice-gateway-user-service 及 ./microservice-gateway-springcloud-gateway2 服务
+  * 运行 ./microservice-gateway-user-service 及 ./microservice-gateway-springcloud-gateway2 服务
   * 点击 [localhost:8081/user/info](http://localhost:8081/user/info)，查看 user 服务是否启动成功
   * 点击 [localhost:8848/nacos/#/serviceManagement](http://localhost:8848/nacos/#/serviceManagement) 进入 nacos 管理后台，查看服务列表是否包含如下服务 *microservice-gateway-user-service*、*microservice-gateway-springcloud-gateway2*
   * 点击 [localhost:8080/user/info](http://localhost:8080/user/info)，**此处显示错误页(Whitelabel Error Page) - 路由还未配置**，接下来在 config 中配置路由
