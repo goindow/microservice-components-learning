@@ -14,7 +14,7 @@ dynamic:
     server-addr: localhost:8848   # nacos config
     namespace: public
     group: DEFAULT_GROUP
-    data-id: microservice-gateway-springcloud-gateway2-dynamic-route
+    data-id: microservice-gateway-springcloud-gateway2-dynamic-route.json
 logging:
   level:
     org.springframework.cloud.gateway: debug
