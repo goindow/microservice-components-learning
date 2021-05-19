@@ -21,10 +21,17 @@ spring:
       # 静态路由
       routes:
         # http://localhost:8080/user/info => http://localhost:8081/user/info(microservice-gateway-user-service)
-        - id: microservice-discovery-nacos
+        - id: user-serice
           uri: lb://microservice-gateway-user-service
           predicates:
             - Path=/user/**
 logging:
   level:
     org.springframework.cloud.gateway: debug
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  security:
+    enabled: false
