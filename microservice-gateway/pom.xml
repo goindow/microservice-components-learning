@@ -21,7 +21,9 @@
   <!-- 子模块列表 -->
   <modules>
     <module>microservice-gateway-springcloud-gateway</module>
-      <module>microservice-gateway-user-service</module>
+    <module>microservice-gateway-springcloud-gateway2</module>
+    <module>microservice-gateway-user-service</module>
+    <module>microservice-gateway-payment-service</module>
   </modules>
 
   <!-- 属性 -->
@@ -44,11 +46,23 @@
   <!-- 依赖版本管理，子模块不直接引入，如果引入则默认使用此处定义的版本 -->
   <dependencyManagement>
     <dependencies>
+      <!-- fastjson -->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>1.2.76</version>
+      </dependency>
       <!-- springcloud gateway -->
       <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-starter-gateway</artifactId>
         <version>${springcloud.version}</version>
+      </dependency>
+      <!-- nacos config -->
+      <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        <version>${nacos.version}</version>
       </dependency>
       <!-- nacos discovery -->
       <dependency>
@@ -56,11 +70,11 @@
         <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         <version>${nacos.version}</version>
       </dependency>
-      <!-- nacos config -->
+      <!-- springboot actuator -->
       <dependency>
-        <groupId>com.alibaba.cloud</groupId>
-        <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-        <version>${nacos.version}</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-actuator</artifactId>
+        <version>${springboot.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
