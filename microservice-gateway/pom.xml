@@ -30,6 +30,7 @@
     <springboot.version>2.3.2.RELEASE</springboot.version>
     <springcloud.version>2.2.5.RELEASE</springcloud.version>    <!-- 2.2.5 springcloud => 2.3.2 springboot -->
     <nacos.version>2.2.5.RELEASE</nacos.version>    <!-- 2.2.5 nacos => 2.3.2 springboot -->
+    <log4j2.version>2.17.2</log4j2.version>
   </properties>
 
   <!-- 依赖继承，子模块均自动引入 -->
