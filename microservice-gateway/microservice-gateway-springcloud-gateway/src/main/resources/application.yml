@@ -8,6 +8,8 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
+#      username: nacos
+#      password: nacos
     # springcloud-gateway
     gateway:
       # 动态路由，整合注册中心（nacos），有新的服务注册到注册中心，自动添加该路由
