@@ -2,17 +2,35 @@ version: '2'
 
 services:
   nacos:
-    image: "nacos/nacos-server:2.0.0"
+    image: "nacos/nacos-server:v2.2.1-slim"
     ports:
       - "8848:8848"    # port HTTP client -> server
 #      - "9848:9848"    # port+1000 gRPC client -> server
+#      - "9849:9849"    # port+1001 gRPC server <-> server，集群同步端口
+#      - "7848:7848"    # port-1000 jRaft server <-> server，集群选举端口（如果集群的 NACOS_SERVER_IP & NACOS_SERVERS 指定的是 docker 容器内同一个网络地址则不需要映射，否则需要）
     volumes:
-      - ./conf/custom.properties:/home/nacos/init.d/custom.properties    # 自定义配置
+      - ./conf/application.properties:/home/nacos/conf/application.properties    # 配置
       - ./data:/home/nacos/data    # 持久化（使用内嵌分布式数据库）
       - ./logs:/home/nacos/logs
 #      - /etc/localtime:/etc/localtime
 #    restart: always
     environment:
-      # 更多环境变量参考，https://hub.fastgit.org/nacos-group/nacos-docker/blob/master/README_ZH.md         
+      # 更多环境变量参考，https://hub.fastgit.org/nacos-group/nacos-docker/blob/master/README_ZH.md
       - MODE=standalone
+      # 持久化
       - EMBEDDED_STORAGE=embedded       # 使用内嵌分布式数据库持久化
+      # 权限
+      - NACOS_AUTH_ENABLE=false
+      - NACOS_AUTH_USER_AGENT_AUTH_WHITE_ENABLE=false
+      - NACOS_AUTH_IDENTITY_KEY=bwyjpre
+      - NACOS_AUTH_IDENTITY_VALUE=Zhujia2023!@#2023
+      - NACOS_AUTH_TOKEN=012345678901234567890123456789012345678901234567890123456666
+      # 集群
+#      - NACOS_SERVER_IP=10.20.10.236    # 指定宿主机网卡 IP，否则使用 docker 内部 IP
+#      - NACOS_SERVERS=10.20.10.236:8848 10.20.11.58:8848 10.20.11.138:8848    # 集群节点列表
+      # JVM
+#      - JVM_XMS=1g      # 程序启动时初始内存大小
+#      - JVM_XMX=1g      # 程序运行时最大可用内存
+#      - JVM_XMN=512m    # 年轻代内存大小
+#      - JVM_MS=128m     # 元空间初始内存大小
+#      - JVM_MMS=320m    # 元空间最大可用内存
