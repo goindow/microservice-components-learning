@@ -7,7 +7,7 @@
 * [/microservice-config，*配置中心*](https://github.com/goindow/microservice-components-learning/tree/main/microservice-config)
   * /microservice-config-nacos
     * nacos 实现，动态获取外部配置
-* [/microservice-slb，*负载均衡（服务间，客户端负载均衡）*](https://github.com/goindow/microservice-components-learning/tree/main/microservice-slb)
+* [todo: /microservice-slb，*负载均衡（服务间，客户端负载均衡）*](https://github.com/goindow/microservice-components-learning/tree/main/microservice-slb)
   * /microservice-slb-ribbon
     * ribbon 实现，内部服务间，客户端负载均衡
 * [/microservice-gateway，*网关*](https://github.com/goindow/microservice-components-learning/tree/main/microservice-gateway)
